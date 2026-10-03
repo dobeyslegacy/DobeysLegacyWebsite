@@ -1,30 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Steam Community | DOBEY'S LEGACY</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#090909;color:#fff;text-align:center}
-header{padding:35px 15px;background:linear-gradient(135deg,#00111c,#090909)}
-.container{max-width:850px;margin:auto;padding:25px 15px}
-.box{background:#151515;border:1px solid #292929;border-radius:16px;padding:28px;margin:18px 0}
-.btn{display:inline-block;margin:8px;padding:12px 20px;border-radius:10px;background:#d40000;color:white;text-decoration:none;font-weight:bold}
-.back{background:#333}
-h1{font-size:30px} p{color:#bbb;line-height:1.6}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Steam Accounts | DOBEY'S LEGACY</title>
+    <meta name="description" content="Explore Steam game accounts from DOBEY'S LEGACY.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #090909;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            padding: 30px 15px;
+            background: linear-gradient(135deg, #180000, #090909);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        h1 {
+            margin: 15px 0 8px;
+            font-size: 32px;
+        }
+
+        header p {
+            color: #aaa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.25s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: #d40000;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-content h2 {
+            margin: 0 0 8px;
+        }
+
+        .game-content p {
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            background: #d40000;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #ff1a1a;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 30px;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 30px 15px;
+            color: #777;
+        }
+    </style>
 </head>
+
 <body>
-<header><h1>🎮 Steam Community</h1><p>DOBEY'S LEGACY</p></header>
+
+<header>
+
+    <img
+        class="logo"
+        src="logo.png"
+        alt="DOBEY'S LEGACY Logo"
+    >
+
+    <h1>🎮 Steam Accounts</h1>
+
+    <p>Steam games & accounts from DOBEY'S LEGACY</p>
+
+</header>
+
+
 <div class="container">
-<div class="box"><h2>📢 Steam Updates</h2><p>Latest community announcements, game news and useful Steam updates.</p></div>
-<div class="box"><h2>🎁 Free Game Alerts</h2><p>We can post announcements about legitimate free-game promotions and official offers.</p></div>
-<div class="box"><h2>🎉 Community Events</h2><p>Check this page for upcoming DOBEY'S LEGACY gaming events and activities.</p></div>
-<div class="box">
-<a class="btn" href="https://store.steampowered.com/">Official Steam</a>
-<a class="btn" href="https://discord.gg/ECQZhRkccJ">Join Discord</a>
-<a class="btn back" href="index.html">← Back Home</a>
+
+    <div class="games">
+
+
+        <!-- Red Dead Redemption 2 -->
+
+        <div class="game-card">
+
+            <img
+                class="game-image"
+                src="https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg"
+                alt="Red Dead Redemption 2"
+            >
+
+            <div class="game-content">
+
+                <h2>Red Dead Redemption 2</h2>
+
+                <p>
+                    Explore the world of Red Dead Redemption 2
+                    and get account access through our Discord.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://discord.gg/ECQZhRkccJ"
+                    target="_blank"
+                >
+                    GET ACCOUNT
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EA SPORTS FC 27 -->
+
+        <div class="game-card">
+
+            <img
+                class="game-image"
+                src="https://cdn.akamai.steamstatic.com/steam/apps/3405690/header.jpg"
+                alt="EA SPORTS FC 27"
+            >
+
+            <div class="game-content">
+
+                <h2>EA SPORTS FC 27</h2>
+
+                <p>
+                    Get access to EA SPORTS FC 27
+                    through the DOBEY'S LEGACY community.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://discord.gg/ECQZhRkccJ"
+                    target="_blank"
+                >
+                    GET ACCOUNT
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GTA V -->
+
+        <div class="game-card">
+
+            <img
+                class="game-image"
+                src="https://cdn.akamai.steamstatic.com/steam/apps/3240220/header.jpg"
+                alt="GTA V"
+            >
+
+            <div class="game-content">
+
+                <h2>Grand Theft Auto V</h2>
+
+                <p>
+                    Get GTA V account access
+                    through our Discord community.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://discord.gg/ECQZhRkccJ"
+                    target="_blank"
+                >
+                    GET ACCOUNT
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Cyberpunk 2077 -->
+
+        <div class="game-card">
+
+            <img
+                class="game-image"
+                src="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg"
+                alt="Cyberpunk 2077"
+            >
+
+            <div class="game-content">
+
+                <h2>Cyberpunk 2077</h2>
+
+                <p>
+                    Explore Night City and get account
+                    access through our Discord.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://discord.gg/ECQZhRkccJ"
+                    target="_blank"
+                >
+                    GET ACCOUNT
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Forza Horizon 5 -->
+
+        <div class="game-card">
+
+            <img
+                class="game-image"
+                src="https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg"
+                alt="Forza Horizon 5"
+            >
+
+            <div class="game-content">
+
+                <h2>Forza Horizon 5</h2>
+
+                <p>
+                    Enjoy Forza Horizon 5 and get account
+                    access through our Discord community.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://discord.gg/ECQZhRkccJ"
+                    target="_blank"
+                >
+                    GET ACCOUNT
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <a
+        class="back"
+        href="index.html"
+    >
+        ← Back to DOBEY'S LEGACY
+    </a>
+
 </div>
-</div>
+
+
+<footer>
+
+    © DOBEY'S LEGACY — Official Community
+
+</footer>
+
 </body>
 </html>
