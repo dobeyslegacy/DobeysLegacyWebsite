@@ -1,153 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>Join to Unlock | DOBEY'S LEGACY</title>
-  <style>
-    :root {
-      --red: #e32636;
-      --red-bright: #ff3548;
-      --bg: #080808;
-      --panel: rgba(18, 18, 18, .92);
-      --muted: #a8a8a8;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; color: #fff;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(ellipse at 50% 15%, rgba(180, 0, 20, .22), transparent 42%),
-        radial-gradient(ellipse at 8% 90%, rgba(150, 0, 15, .12), transparent 35%),
-        linear-gradient(145deg, #080808, #120608 55%, #070707);
-      display: grid; place-items: center; padding: 28px 16px;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .18;
-      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(to bottom, black, transparent 90%);
-    }
-    .glow {
-      position: fixed; width: 340px; height: 340px; border-radius: 50%;
-      background: rgba(227, 38, 54, .12); filter: blur(90px);
-      top: -170px; left: calc(50% - 170px); pointer-events: none;
-      animation: breathe 5s ease-in-out infinite alternate;
-    }
-    .card {
-      position: relative; width: min(100%, 440px); text-align: center;
-      padding: 34px 26px 28px; border: 1px solid rgba(227,38,54,.38);
-      border-radius: 22px; background: var(--panel);
-      box-shadow: 0 18px 70px rgba(0,0,0,.58), 0 0 34px rgba(227,38,54,.10);
-      animation: rise .7s ease both;
-    }
-    .brand {
-      font-size: 12px; letter-spacing: 4px; font-weight: 800;
-      color: #f0f0f0; margin-bottom: 22px;
-    }
-    .brand span { color: var(--red-bright); }
-    .discord-mark {
-      width: 76px; height: 76px; margin: 0 auto 18px; display: grid; place-items: center;
-      border-radius: 22px; background: linear-gradient(145deg, #5865F2, #404ECA);
-      box-shadow: 0 9px 30px rgba(88,101,242,.28);
-      animation: float 3.2s ease-in-out infinite;
-    }
-    .discord-mark svg { width: 48px; height: 48px; fill: white; }
-    h1 { margin: 0; font-size: clamp(23px, 6vw, 29px); letter-spacing: 1.2px; }
-    h1 .red { color: var(--red-bright); }
-    .sub { color: var(--muted); line-height: 1.6; font-size: 14px; margin: 12px auto 24px; max-width: 310px; }
-    .btn {
-      width: 100%; min-height: 52px; border: 0; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      font-size: 14px; font-weight: 800; letter-spacing: .8px; text-decoration: none;
-      cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .join { color: #fff; background: #5865F2; box-shadow: 0 8px 22px rgba(88,101,242,.2); }
-    .join:hover { background: #4752c4; box-shadow: 0 10px 28px rgba(88,101,242,.32); }
-    .unlock { color: white; background: linear-gradient(100deg, #b51225, #f02c40); box-shadow: 0 8px 22px rgba(227,38,54,.2); }
-    .unlock:hover { box-shadow: 0 10px 28px rgba(227,38,54,.35); }
-    .hidden { display: none; }
-    .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent); margin: 24px 0 18px; }
-    .step { color: #858585; font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; margin-bottom: 12px; }
-    .note { color: #777; font-size: 11px; line-height: 1.5; margin: 18px 0 0; }
-    .download-area {
-      margin-top: 18px; padding: 14px; border-radius: 12px;
-      border: 1px solid rgba(227,38,54,.3); background: rgba(227,38,54,.07);
-      animation: fade .35s ease both;
-    }
-    .download-area p { margin: 0 0 12px; color: #ddd; font-size: 13px; }
-    .copy { min-height: 44px; color: #fff; background: #242424; border: 1px solid #444; }
-    .copy:hover { background: #303030; }
-    .status { color: #9de6ad; font-size: 12px; min-height: 17px; margin-top: 9px; }
-    footer { color: #686868; font-size: 10px; letter-spacing: 1.5px; margin-top: 22px; }
-    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-    @keyframes breathe { from { opacity: .55; transform: scale(.9); } to { opacity: 1; transform: scale(1.12); } }
-    @keyframes fade { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>Join to Unlock | DOBEY'S LEGACY</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;padding:25px 16px;
+ display:grid;place-items:center;color:white;
+ font-family:Arial,Helvetica,sans-serif;
+ background:
+ radial-gradient(ellipse at 50% 12%,rgba(180,0,20,.24),transparent 42%),
+ linear-gradient(145deg,#080808,#160609 58%,#070707);
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+ background-size:34px 34px;
+}
+.glow{
+ position:fixed;width:300px;height:300px;border-radius:50%;
+ top:-160px;left:calc(50% - 150px);
+ background:rgba(227,38,54,.16);filter:blur(85px);
+ animation:pulse 5s ease-in-out infinite alternate;
+}
+.card{
+ position:relative;width:min(100%,440px);
+ padding:34px 26px 28px;text-align:center;
+ border:1px solid rgba(227,38,54,.4);
+ border-radius:22px;background:rgba(17,17,17,.95);
+ box-shadow:0 18px 70px rgba(0,0,0,.6),0 0 32px rgba(227,38,54,.1);
+ animation:rise .65s ease both;
+}
+.brand{margin-bottom:22px;font-size:12px;font-weight:800;letter-spacing:4px}
+.brand span,h1 span{color:#ff3548}
+.discord-logo{
+ width:78px;height:78px;margin:0 auto 18px;
+ display:grid;place-items:center;border-radius:22px;
+ background:linear-gradient(145deg,#5865f2,#404eca);
+ box-shadow:0 9px 30px rgba(88,101,242,.28);
+ animation:float 3s ease-in-out infinite;
+}
+.discord-logo svg{width:49px;height:49px;fill:white}
+h1{margin:0;font-size:clamp(23px,6vw,29px);letter-spacing:1px}
+.sub{max-width:310px;margin:12px auto 24px;color:#aaa;font-size:14px;line-height:1.6}
+.step{margin:0 0 12px;color:#888;font-size:11px;letter-spacing:1.5px}
+.btn{
+ width:100%;min-height:52px;display:flex;
+ justify-content:center;align-items:center;gap:9px;
+ border:0;border-radius:12px;color:white;
+ font-size:14px;font-weight:800;letter-spacing:.8px;
+ text-decoration:none;cursor:pointer;transition:.2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.join{background:#5865f2;box-shadow:0 8px 22px rgba(88,101,242,.22)}
+.join:hover{background:#4752c4}
+.unlock{background:linear-gradient(100deg,#b51225,#f02c40)}
+.divider{height:1px;margin:24px 0 18px;background:linear-gradient(90deg,transparent,#444,transparent)}
+.hidden{display:none!important}
+.download{
+ margin-top:18px;padding:14px;
+ border:1px solid rgba(227,38,54,.3);
+ border-radius:12px;background:rgba(227,38,54,.07);
+ animation:fade .35s ease both;
+}
+.download p{margin:0 0 12px;color:#ddd;font-size:13px}
+.copy{min-height:44px;background:#252525;border:1px solid #444}
+.status{min-height:17px;margin-top:9px;color:#9de6ad;font-size:12px}
+.note{margin:18px 0 0;color:#777;font-size:11px;line-height:1.5}
+footer{margin-top:22px;color:#666;font-size:10px;letter-spacing:1.5px}
+
+@keyframes rise{
+ from{opacity:0;transform:translateY(16px)}
+ to{opacity:1;transform:translateY(0)}
+}
+@keyframes float{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-7px)}
+}
+@keyframes pulse{
+ from{opacity:.55;transform:scale(.9)}
+ to{opacity:1;transform:scale(1.12)}
+}
+@keyframes fade{
+ from{opacity:0;transform:translateY(7px)}
+ to{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important}
+}
+</style>
 </head>
+
 <body>
-  <div class="glow"></div>
-  <main class="card">
-    <div class="brand">ＤＯＢＥＹ'Ｓ <span>LEGACY</span></div>
+<div class="glow"></div>
 
-    <div class="discord-mark" aria-label="Discord logo">
-      <svg viewBox="0 0 127.14 96.36" role="img" aria-hidden="true">
-        <path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.89 97.68 97.68 0 0 0-29.08 0A72.37 72.37 0 0 0 45.67 0 105.89 105.89 0 0 0 19.42 8.09C2.8 32.65-1.7 56.6.55 80.21h.03a105.73 105.73 0 0 0 32.15 16.15 77.7 77.7 0 0 0 6.89-11.13 68.42 68.42 0 0 1-10.85-5.18c.91-.67 1.8-1.36 2.66-2.07 20.92 9.76 43.6 9.76 64.27 0 .87.71 1.76 1.4 2.67 2.07a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.12 105.25 105.25 0 0 0 32.17-16.14h.03c2.64-27.38-4.51-51.11-18.89-72.15ZM42.45 65.69c-6.28 0-11.45-5.77-11.45-12.84s5.06-12.85 11.45-12.85 11.56 5.77 11.45 12.85c0 7.07-5.06 12.84-11.45 12.84Zm42.24 0c-6.28 0-11.45-5.77-11.45-12.84S78.3 40 84.69 40s11.56 5.77 11.45 12.85c0 7.07-5.06 12.84-11.45 12.84Z"/>
-      </svg>
-    </div>
+<main class="card">
 
-    <h1>JOIN DISCORD <span class="red">TO UNLOCK</span></h1>
-    <p class="sub">Join the DOBEY'S LEGACY community and unlock your download link.</p>
+<div class="brand">ＤＯＢＥＹ'S <span>LEGACY</span></div>
 
-    <div class="step">Step 01 · Join our community</div>
-    <a class="btn join" href="https://discord.gg/ECQZhRkccJ" target="_blank" rel="noopener">
-      JOIN DISCORD <span aria-hidden="true">↗</span>
-    </a>
+<div class="discord-logo">
+<svg viewBox="0 0 127.14 96.36" aria-hidden="true">
+<path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.89 97.68 97.68 0 0 0-29.08 0A72.37 72.37 0 0 0 45.67 0 105.89 105.89 0 0 0 19.42 8.09C2.8 32.65-1.7 56.6.55 80.21h.03a105.73 105.73 0 0 0 32.15 16.15 77.7 77.7 0 0 0 6.89-11.13 68.42 68.42 0 0 1-10.85-5.18c.91-.67 1.8-1.36 2.66-2.07 20.92 9.76 43.6 9.76 64.27 0 .87.71 1.76 1.4 2.67 2.07a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.12 105.25 105.25 0 0 0 32.17-16.14h.03c2.64-27.38-4.51-51.11-18.89-72.15ZM42.45 65.69c-6.28 0-11.45-5.77-11.45-12.84s5.06-12.85 11.45-12.85 11.56 5.77 11.45 12.85c0 7.07-5.06 12.84-11.45 12.84Zm42.24 0c-6.28 0-11.45-5.77-11.45-12.84S78.3 40 84.69 40s11.56 5.77 11.45 12.85c0 7.07-5.06 12.84-11.45 12.84Z"/>
+</svg>
+</div>
 
-    <div class="divider"></div>
-    <div class="step">Step 02 · Return here to unlock</div>
-    <button class="btn unlock" id="unlockBtn" type="button">UNLOCK DOWNLOAD</button>
+<h1>JOIN DISCORD <span>TO UNLOCK</span></h1>
 
-    <section class="download-area hidden" id="downloadArea">
-      <p>Your download link is ready.</p>
-      <button class="btn copy" id="copyBtn" type="button">COPY DOWNLOAD LINK</button>
-      <div class="status" id="status" aria-live="polite"></div>
-    </section>
+<p class="sub">
+Join the DOBEY'S LEGACY community to reveal your download button.
+</p>
 
-    <p class="note">Please return to this page after joining Discord.<br>This is a simple button-based unlock, not automatic membership verification.</p>
-    <footer>© DOBEY'S LEGACY · GAMING COMMUNITY</footer>
-  </main>
+<div class="step">STEP 01 · JOIN OUR COMMUNITY</div>
 
-  <script>
-    const downloadUrl = "https://cdn.discordapp.com/attachments/1563160087214817360/1573242445779566602/Particles__Northern_Lights_GP_by_demon.rar?ex=6b029d34&is=6b014bb4&hm=0c3c6e3d6cb8932f0892532497cb108d51a4a5a6be65eaf35d227d8da57de735&";
-    const unlockBtn = document.getElementById("unlockBtn");
-    const downloadArea = document.getElementById("downloadArea");
-    const copyBtn = document.getElementById("copyBtn");
-    const status = document.getElementById("status");
+<a class="btn join" id="joinBtn"
+href="https://discord.gg/ECQZhRkccJ"
+target="_blank" rel="noopener">
+JOIN DISCORD ↗
+</a>
 
-    unlockBtn.addEventListener("click", () => {
-      downloadArea.classList.remove("hidden");
-      unlockBtn.textContent = "DOWNLOAD UNLOCKED";
-      unlockBtn.disabled = true;
-      unlockBtn.style.opacity = ".7";
-    });
+<section id="unlockSection" class="hidden">
+<div class="divider"></div>
+<div class="step">STEP 02 · YOU CAN NOW UNLOCK</div>
+<button class="btn unlock" id="unlockBtn">
+UNLOCK DOWNLOAD
+</button>
+</section>
 
-    copyBtn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(downloadUrl);
-        status.textContent = "Link copied! Paste it in your browser.";
-      } catch (e) {
-        status.textContent = "Copy not available here. Contact the page owner for the link.";
-      }
-    });
-  </script>
+<section class="download hidden" id="downloadArea">
+<p>Your download link is ready.</p>
+<button class="btn copy" id="copyBtn">
+COPY DOWNLOAD LINK
+</button>
+<div class="status" id="status"></div>
+</section>
+
+<p class="note">
+After clicking Join Discord, return to this page to continue.<br>
+This is a button-based flow, not automatic Discord membership verification.
+</p>
+
+<footer>© DOBEY'S LEGACY · GAMING COMMUNITY</footer>
+
+</main>
+
+<script>
+// Replace this URL whenever you add a new file.
+const downloadUrl = "PASTE_YOUR_DISCORD_DOWNLOAD_LINK_HERE";
+
+const joinBtn = document.getElementById("joinBtn");
+const unlockSection = document.getElementById("unlockSection");
+const unlockBtn = document.getElementById("unlockBtn");
+const downloadArea = document.getElementById("downloadArea");
+const copyBtn = document.getElementById("copyBtn");
+const status = document.getElementById("status");
+
+// Show unlock button only after Join Discord is clicked.
+joinBtn.addEventListener("click", () => {
+ unlockSection.classList.remove("hidden");
+});
+
+unlockBtn.addEventListener("click", () => {
+ downloadArea.classList.remove("hidden");
+ unlockBtn.textContent = "DOWNLOAD UNLOCKED";
+ unlockBtn.disabled = true;
+});
+
+copyBtn.addEventListener("click", async () => {
+ try {
+  await navigator.clipboard.writeText(downloadUrl);
+  status.textContent = "Link copied! Paste it in your browser.";
+ } catch(error) {
+  status.textContent = "Copy failed. Please try again in your browser.";
+ }
+});
+</script>
+
 </body>
 </html>
